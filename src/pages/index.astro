@@ -1,11 +1,69 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Header from "../components/Header.astro";
+import Sidebar from "../components/Sidebar.astro";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+
+<!DOCTYPE html>
+<html
+>
+  <Header title="Daniel Nolan" />
+  <body>
+    <div class="content">
+      <Sidebar selectedItem="home" />
+      <nav class="main">
+        <div class="container">
+          <main class="fold-content-container">
+            <div class="fold-content">
+              <h1>Hi, I'm Dan.<br /></h1>
+              <p class="lead">
+                I've been playing around with code and computers for as long as I can remember. I'm a software engineer with a passion for building things that make a difference.
+              </p>
+            </div>
+            <a href="mailto:daniel@dnolan.com" class="button w-button">Contact</a>
+          </main>
+          <div class="projects-section">
+            <!-- Software Development -->
+            <a href="/software-development" class="projects-container">
+              <div class="single-projects-category">
+                <div class="projects-category-image-container">
+                  <img src="./assets/browser.svg" loading="lazy" alt="" class="projects-category-image" />
+                </div>
+              </div>
+              <div class="single-projects-content">
+                <h4>Software Development</h4>
+                <div class="tech-tools-container">
+                  <div class="mini-label-white gray-color">Technologies &amp; tools</div>
+                  <div class="chips-container chips-container-small-width">
+                    <div class="single-chip small-chip">C#</div>
+                    <div class="single-chip small-chip">SQL Server</div>
+                    <div class="single-chip small-chip">ASP.NET</div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="/quake-2" class="projects-container">
+              <div class="single-projects-category">
+                <div class="projects-category-image-container">
+                  <img src="./assets/quake-2.png" loading="lazy" alt="" class="projects-category-image" />
+                </div>
+              </div>
+              <div class="single-projects-content">
+                <h4>Quake 2 Maps</h4>
+                <div class="tech-tools-container">
+                  <div class="mini-label-white gray-color">Levels designed back in the 90s</div>
+                  <div class="chips-container chips-container-small-width">
+                    <div class="single-chip small-chip">BSP Editor</div>
+                    <div class="single-chip small-chip">Quake2</div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+  </body>
+</html>

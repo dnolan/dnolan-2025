@@ -1,0 +1,118 @@
+---
+import Header from "../components/Header.astro";
+import Project from "../components/Project.astro";
+import Sidebar from "../components/Sidebar.astro";
+const projects = [
+  {
+    title: "Sepulchre - trdm01a",
+    desc: [
+      "My first released Quake 2 map, named after a James Herbert novel. No relation but it worked for a name at the time.",
+    ],
+    tech: ["BSP Editor", "Quake2"],
+    images: [
+      "/assets/quake-2/q2_trdm01a.jpg",
+      "/assets/quake-2/q2_trdm01b.jpg",
+      "/assets/quake-2/q2_trdm01c.jpg",
+    ],
+  },
+   {
+    title: "Shadows and Imaginings - trdm02a",
+    desc: [
+    ],
+    tech: ["BSP Editor", "Quake2"],
+    images: [
+      "/assets/quake-2/q2_trdm02a.jpg",
+      "/assets/quake-2/q2_trdm02b.jpg",
+      "/assets/quake-2/q2_trdm02c.jpg",
+    ],
+  },
+    {
+      title: "Tribute - trdm03a",
+      desc: [
+      ],
+      tech: ["BSP Editor", "Quake2"],
+      images: [
+        "/assets/quake-2/q2_trdm03a.jpg",
+        "/assets/quake-2/q2_trdm03b.jpg",
+        "/assets/quake-2/q2_trdm03c.jpg",
+      ],
+    },
+    {
+      title: "Unknown Domain - trdm04a",
+      desc: [
+      ],
+      tech: ["BSP Editor", "Quake2"],
+      images: [
+        "/assets/quake-2/q2_trdm04a.jpg",
+        "/assets/quake-2/q2_trdm04b.jpg",
+        "/assets/quake-2/q2_trdm04c.jpg",
+      ],
+    },
+    {
+      title: "Vertical Asylum - trdm05a",
+      desc: [
+      ],
+      tech: ["BSP Editor", "Quake2"],
+      images: [
+        "/assets/quake-2/q2_trdm05a.jpg",
+        "/assets/quake-2/q2_trdm05b.jpg",
+        "/assets/quake-2/q2_trdm05c.jpg",
+      ],
+    },
+    {
+      title: "Impurity - trdm06a",
+      desc: [
+      ],
+      tech: ["BSP Editor", "Quake2"],
+      images: [
+        "/assets/quake-2/q2_trdm06a.jpg",
+        "/assets/quake-2/q2_trdm06b.jpg",
+        "/assets/quake-2/q2_trdm06c.jpg",
+      ],
+    },
+];
+---
+
+<!doctype html>
+<html>
+  <Header title="Quake 2 | Daniel Nolan" />
+  <body>
+    <div class="content">
+      <Sidebar selectedItem="quake-2" />
+      <nav class="main">
+        <div class="container">
+          <div class="back-nav-container">
+            <a href="/" class="back-nav-button w-inline-block"
+              ><img
+                src="/assets/back.svg"
+                loading="lazy"
+                alt=""
+                class="back-nav-img"
+              />
+              <div>Back</div></a
+            >
+          </div>
+          <div class="content-container">
+            <h1>Quake 2 Maps</h1>
+            <section class="items-container">
+              <div class="resouce-items">
+                {
+                  projects.map((project) => (
+                    <Project
+                      title={project.title}
+                      desc={project.desc}
+                      tech={project.tech}
+                      images={project.images}
+                    />
+                  ))
+                }
+              </div>
+            </section>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+  </body>
+</html>

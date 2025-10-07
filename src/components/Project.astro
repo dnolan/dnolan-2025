@@ -1,5 +1,12 @@
 ---
-const { title, desc, tech } = Astro.props;
+interface Props {
+  title: string;
+  desc: string[];
+  tech: string[];
+  images: string[];
+}
+
+const { title, desc, tech, images = [] } = Astro.props;
 ---
 
 <div class="single-item">
@@ -9,6 +16,10 @@ const { title, desc, tech } = Astro.props;
       {desc.map(item => <li>{item}</li>)}
     </ul>
   </div>
+  <div class="project-images">
+    {images.map(image => (
+      <img src={image} loading="lazy" alt={title} class="project-image" />
+    ))}
   <div class="mini-label-white">Technologies &amp; tools</div>
   <div class="chips-container">
     {tech.map(techItem => <div class="single-chip">{techItem}</div>)}

@@ -4,11 +4,16 @@ import Project from '../components/Project.astro';
 import Sidebar from '../components/Sidebar.astro';
 const projects = [
   {
-    title: "Todo",
+    title: "School Year Countdown",
     desc: [
-      "Todo"
+      "My daughters wanted a countdown to the end of the school year, so I built this simple web app to show them how many days were left in each term",
+      "Built with React and Vite, deployed on Cloudflare Pages"
     ],
-    tech: []
+    links: [
+      { label: "School year Countdown", url: "https://school.dnolan.com"}
+    ],
+    tech: [ "React", "Vite", "Cloudflare" ],
+    images: []
   }
 ];
 ---
@@ -37,6 +42,8 @@ const projects = [
                         title={project.title} 
                         desc={project.desc}
                         tech={project.tech}
+                        images={project.images}
+                        links={project.links}
                       />
                     ))}
                   </div>

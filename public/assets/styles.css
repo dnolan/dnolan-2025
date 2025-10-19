@@ -545,6 +545,23 @@ p {
   margin-left: -24px;
 }
 
+.project-links {
+  line-height: 24px;
+}
+
+.project-links.project-links-list {
+  margin-left: -24px;
+}
+
+.project-links.project-links-list li {
+  list-style: square;
+}
+
+.project-links.project-links-list a {
+  color:hsl(221, 28%, 58%);
+  text-decoration: none;
+}
+
 .content-container {
   grid-column-gap: 32px;
   grid-row-gap: 32px;

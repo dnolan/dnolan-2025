@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
+import { ClientRouter } from 'astro:transitions';
 interface HeaderProps {
   title: string;
 }
@@ -9,7 +9,7 @@ const { title } = Astro.props as HeaderProps;
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <title>{title}</title>
-  <ViewTransitions />
+  <ClientRouter />
   <meta content={title} property="og:title" />
   <meta content={title} property="twitter:title" />
   <meta content="width=device-width, initial-scale=1" name="viewport" />
@@ -24,6 +24,6 @@ const { title } = Astro.props as HeaderProps;
       (n.className += t + "js"), ("ontouchstart" in o || (o.DocumentTouch && c instanceof DocumentTouch)) && (n.className += t + "touch");
     })(window, document);
   </script>
-  <link href="/assets/favicon-32x32.png" rel="shortcut icon" type="image/x-icon" />
-  <link href="/assets/favicon-32x32.png" rel="apple-touch-icon" />
+  <!-- <link href="/assets/favicon-32x32.png" rel="shortcut icon" type="image/x-icon" />
+  <link href="/assets/favicon-32x32.png" rel="apple-touch-icon" /> -->
 </head>
